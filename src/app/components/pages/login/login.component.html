@@ -1,0 +1,55 @@
+<div class="card-row">
+  <div class="card-col">
+    <nb-card *ngIf="!isAuth">
+      <nb-card-header>
+        <h3>Se connecter</h3>
+      </nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="fg" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <p>Email :</p>
+            <input
+              nbInput
+              fullWidth
+              type="text"
+              class="form-control"
+              formControlName="email"
+            />
+          </div>
+          <div class="form-group">
+            <p>Mot de passe :</p>
+            <input
+              nbInput
+              fullWidth
+              type="password"
+              class="form-control"
+              formControlName="password"
+            />
+          </div>
+          <br />
+          <button
+            class="logButon"
+            nbButton
+            type="submit"
+            [disabled]="fg.invalid"
+          >
+            Connexion
+          </button>
+        </form>
+      </nb-card-body>
+      <nb-card-footer>
+        <p class="text-danger">{{ errorMessage }}</p>
+      </nb-card-footer>
+    </nb-card>
+    <nb-card *ngIf="isAuth">
+      <nb-card-header>
+        <h3>Se déconnecter</h3>
+      </nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="fg" (ngSubmit)="onSubmit()">
+          <button class="logButon" nbButton type="submit">Déconnexion</button>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

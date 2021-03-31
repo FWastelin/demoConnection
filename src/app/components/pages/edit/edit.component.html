@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <nb-card>
+      <nb-card-header>
+        <h3>Modifier un utilisateur</h3>
+      </nb-card-header>
+    </nb-card>
+    <nb-card-body>
+      <form [formGroup]="fg" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <p>Email :</p>
+          <input
+            nbInput
+            fullWidth
+            type="text"
+            class="form-control"
+            formControlName="email"
+          />
+        </div>
+        <div class="form-group">
+          <p>Mot de passe :</p>
+          <input
+            nbInput
+            fullWidth
+            type="password"
+            class="form-control"
+            formControlName="psw"
+          />
+        </div>
+        <div class="form-group">
+          <p>Nom :</p>
+          <input
+            nbInput
+            fullWidth
+            type="text"
+            class="form-control"
+            formControlName="lastName"
+          />
+        </div>
+        <div class="form-group">
+          <p>Prénom :</p>
+          <input
+            nbInput
+            fullWidth
+            type="text"
+            class="form-control"
+            formControlName="firstName"
+          />
+        </div>
+        <br />
+        <button class="regButon" nbButton type="submit" [disabled]="fg.invalid">
+          Modifier
+        </button>
+      </form>
+    </nb-card-body>
+    <nb-card-footer>
+      <p class="text-danger">{{ errorMessage }}</p>
+    </nb-card-footer>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div>
+  <nb-card>
+    <nb-card-header>
+      <h3>Créer un compte</h3>
+    </nb-card-header>
+    <nb-card-body>
+      <form [formGroup]="fg" (ngSubmit)="onSubmit()">
+        <div>
+          <p>Email:</p>
+          <input nbInput fullWidth type="text" formControlName="email" />
+        </div>
+        <div>
+          <p>Mot de passe:</p>
+          <input nbInput fullWidth type="password" formControlName="psw" />
+        </div>
+        <div>
+          <p>Nom:</p>
+          <input nbInput fullWidth type="text" formControlName="lastName" />
+        </div>
+        <div>
+          <p>Prénom:</p>
+          <input nbInput fullWidth type="text" formControlName="firstName" />
+        </div>
+        <button nbButton type="submit" [disabled]="fg.invalid">
+          S'inscrire
+        </button>
+      </form>
+    </nb-card-body>
+    <nb-card-footer>
+      <p>{{ errorMessage }}</p>
+    </nb-card-footer>
+  </nb-card>
+</div>

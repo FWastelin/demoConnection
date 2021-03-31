@@ -1,0 +1,34 @@
+<nb-card>
+  <nb-card-header>
+    <p>Info user</p>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="form-group">
+      <p>
+        Email :
+        <span>{{ user.email }}</span>
+      </p>
+    </div>
+    <div class="form-group">
+      <p>
+        Mot de passe :
+        <span>{{ user.psw }}</span>
+      </p>
+    </div>
+    <div class="form-group">
+      <p>
+        Nom :
+        <span>{{ user.lastName }}</span>
+      </p>
+    </div>
+    <div class="form-group">
+      <p>
+        Prénom :
+        <span>{{ user.firstName }}</span>
+      </p>
+    </div>
+    <br />
+    <button nbButton (click)="toEdit(user.id)" status="warning">Edit</button
+    >&nbsp;
+  </nb-card-body>
+</nb-card>
