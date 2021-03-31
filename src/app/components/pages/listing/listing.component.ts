@@ -36,7 +36,8 @@ export class ListingComponent implements OnInit {
   toDelete(id : number){
     let ref = this._dialogSetbice.open(ConfirmboxComponent, {
       context : {
-       
+        //firstName : this.users.find(user => user.id == id).firstName,
+        //lastName : this.users.find(user=> user.id == id).lastName
       },
       closeOnBackdropClick : false
     });
